@@ -3,6 +3,8 @@ gglayer <- function(.data,layer_use,...){
 
   if("data"%in%names(additionalArgs)){
     updatedArgs <<- additionalArgs[names(additionalArgs)!='data']
+    additionalArgs$data = sym(quo_name(additionalArgs$data))
+    print(additionalArgs$data)
     out <- .data %>%
       mutate('plot'=map(plot,function(plot,data,layer_use,updatedArgs){
         plot+
