@@ -25,7 +25,7 @@
 #' out$plot
 
 gglayer <- function(.data,layer_use,...){
-  additionalArgs <- as.list(match.call(expand.dots = FALSE))[['...']]
+  additionalArgs <<- as.list(match.call(expand.dots = FALSE))[['...']]
 
   if("data"%in%names(additionalArgs)){
     updatedArgs <- additionalArgs[names(additionalArgs)!='data']
