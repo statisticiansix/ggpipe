@@ -124,7 +124,7 @@
 
 ggpipe <- function(.data,data_column=data,...){
 
-  additionalArgs <<- as.list(match.call(expand.dots = FALSE))[['...']]
+  additionalArgs <- as.list(match.call(expand.dots = FALSE))[['...']]
 
   out <- .data %>%
     mutate('plot'=map(!!sym(quo_name(enquo(data_column))),function(x,additionalArgs){

@@ -1,7 +1,7 @@
 Package: ggpipe
 Type: Package
 Title: Enables ggplot2 to be used with pipes 
-Version: 0.1.2
+Version: 0.1.3
 Author: Simon Wallace
 Maintainer: Simon Wallace <statistician.six@gmail.com>
 Description: Combines ggplot2 with purrr to enable ggplot2 to be used with 
