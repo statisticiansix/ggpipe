@@ -1,11 +1,17 @@
 Package: ggpipe
 Type: Package
-Title: What the Package Does (Title Case)
-Version: 0.1.1
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Title: Enables ggplot2 to be used with pipes 
+Version: 0.1.2
+Author: Simon Wallace
+Maintainer: Simon Wallace <statistician.six@gmail.com>
+Description: Combines ggplot2 with purrr to enable ggplot2 to be used with 
+    pipes and nested data frames. Rather than redefining functions within
+    ggplot2 it utilises the "map" capability from purrr to enable the
+    existing grammar of graphics functions with minimal changes to syntax.
+License: GPL-3
 Encoding: UTF-8
 LazyData: true
+Imports:
+    tidyverse,
+    rlang
+RoxygenNote: 6.1.1

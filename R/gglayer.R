@@ -1,8 +1,8 @@
 gglayer <- function(.data,layer_use,...){
-  additionalArgs <- as.list(match.call())[-c(1:3)]
+  additionalArgs <<- as.list(match.call(expand.dots = FALSE))[['...']]
 
   if("data"%in%names(additionalArgs)){
-    updatedArgs <<- additionalArgs[names(additionalArgs)!='data']
+    updatedArgs <- additionalArgs[names(additionalArgs)!='data']
     additionalArgs$data = sym(quo_name(additionalArgs$data))
     out <- .data %>%
       mutate('plot'=map(plot,function(plot,data,layer_use,updatedArgs){
@@ -11,7 +11,6 @@ gglayer <- function(.data,layer_use,...){
       },layer_use=layer_use,updatedArgs=updatedArgs)
       )
   }else{
-    updated <- additionalArgs
     out <- .data %>%
       mutate('plot'=map(plot,function(plot,layer_use,additionalArgs){
         plot+
@@ -19,7 +18,6 @@ gglayer <- function(.data,layer_use,...){
       },layer_use=layer_use,additionalArgs=additionalArgs)
       )
   }
-  #
 
   return(out)
 }
